@@ -19,14 +19,14 @@ class MyApp extends StatelessWidget {
       themes: getThemes(),
       darkTheme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
-          background: Colors.blue[700],
+          surface: Colors.blue[700],
           secondary: Colors.yellow[700],
           brightness: Brightness.dark,
         ),
       ),
       lightTheme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
-          background: Colors.blue[300],
+          surface: Colors.blue[300],
           secondary: Colors.yellow[300],
           brightness: Brightness.light,
         ),

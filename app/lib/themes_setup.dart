@@ -18,7 +18,7 @@ List<ThemeData> getThemes() {
           labelSmall: TextStyle(fontFamily: 'Poppins'),
         ),
         colorScheme: ColorScheme.fromSwatch().copyWith(
-          background: Colors.red,
+          surface: Colors.red,
           secondary: Colors.blue,
           brightness: Brightness.light,
         )),

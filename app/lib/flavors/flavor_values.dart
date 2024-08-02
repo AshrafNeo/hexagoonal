@@ -1,15 +1,15 @@
-import 'package:app/secrets/app_secrets.dart';
+// import 'package:app/secrets/app_secrets.dart';
 
 class FlavorValues {
   final String apiBaseUrl;
-  final AppSecrets secrets;
+  //final AppSecrets secrets;
   final bool useFakeData;
   final bool showLogs;
   final bool _logSqlStatements;
 
   const FlavorValues({
     required this.apiBaseUrl,
-    required this.secrets,
+    // required this.secrets,
     logSqlStatements = false,
     this.showLogs = false,
     this.useFakeData = false,
