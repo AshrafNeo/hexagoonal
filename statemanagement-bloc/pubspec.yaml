@@ -5,13 +5,12 @@ version: 1.0.0
 publish_to: none
 
 environment:
-  sdk: '>=2.17.6 <3.0.0'
+  sdk: '>=3.4.1 <4.0.0'
 
 # dependencies:
 #   path: ^1.8.0
 dependencies:
-  bloc:
-  flutter_bloc:
+  flutter_bloc: ^8.1.6
   flutter:
     sdk: flutter
   statemanagement_core:

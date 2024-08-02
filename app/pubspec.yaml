@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+15
 
 environment:
-  sdk: ">=2.17.6 <3.0.0"
+  sdk: '>=3.4.1 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -30,6 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_riverpod: ^2.0.2
+  flutter_bloc: ^8.1.6
   cupertino_icons: ^1.0.2
   responsive_framework: ^0.2.0
   get_it:
@@ -50,6 +51,8 @@ dependencies:
     path: ../localisation/
   statemanagement_riverpod:
     path: ../statemanagement-riverpod/
+  statemanagement_bloc:
+    path: ../statemanagement-bloc/  
   services:
     path: ../services/
   statemanagement_core:
