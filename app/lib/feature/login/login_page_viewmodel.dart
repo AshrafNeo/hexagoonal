@@ -21,24 +21,35 @@ class LoginPageViewModel extends BasePageViewModel<LoginEvent, LoginState> {
       : _loginUseCase = loginUseCase,
         super(LoginState()) {
     on<SubmitLogin>(_submitLogin);
+
+    on<DataEvent>(_dataEvent);
   }
 
   void _submitLogin(SubmitLogin event, Emitter<LoginState> emit) async {
     log("mobileController ${mobileController.text}");
     log("passwordController ${passwordController.text}");
 
-    final LoginUseCaseParams params = LoginUseCaseParams(
-        emailOrPhone: mobileController.text, password: passwordController.text);
+    final LoginUseCaseParams params =
+        LoginUseCaseParams(emailOrPhone: "9090901234", password: "123456");
     RequestManager(params,
             createCall: () => _loginUseCase.execute(params: params))
         .asFlow()
         .listen((data) {
-      if (data.status == Status.loading) {
-        log("loading");
-      } else if (data.status == Status.success) {
-        log("success");
-      }
+      add(DataEvent(userResponse: data));
     });
+  }
+
+  Future<void> _dataEvent(DataEvent event, Emitter<LoginState> emit) async {
+    if (event.userResponse.status == Status.loading) {
+      log("LOADING");
+      emit(LoadingState());
+    } else if (event.userResponse.status == Status.success) {
+      log("SUCCESS");
+      emit(SuccessState());
+    } else if (event.userResponse.status == Status.error) {
+      log("ERROR");
+      emit(FailureState());
+    }
   }
 
   @override

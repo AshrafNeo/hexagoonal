@@ -15,12 +15,14 @@ class UserRepositoryImpl extends UserRepository {
   Future<Either<NetworkError, User>> loginWithEmail(
       {required String email, required String password}) async {
     log("message loginWithEmail");
+    await Future.delayed(Duration(seconds: 1));
     return Right(User());
   }
 
   @override
   Future<Either<DatabaseError, User>> saveUser(User user) async {
     log("message loginWithEmail");
+    await Future.delayed(Duration(seconds: 1));
     return Right(User());
   }
 }

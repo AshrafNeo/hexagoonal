@@ -1,5 +1,6 @@
 import 'package:app/feature/login/login_page_viewmodel.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:statemanagement_bloc/statemanagement_bloc.dart';
 
@@ -39,15 +40,28 @@ class LoginPageView extends BasePageViewWidget<LoginPageViewModel> {
             ),
           ),
           const SizedBox(height: 16),
-          ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
-                  foregroundColor: Colors.white,
-                  minimumSize: const Size(double.infinity, 40)),
-              onPressed: () {
-                model.add(SubmitLogin());
-              },
-              child: const Text("Login"))
+          BlocBuilder<LoginPageViewModel, LoginState>(
+            builder: (context, state) {
+              if (state is LoadingState) {
+                return const Center(
+                  child: SizedBox(
+                    width: 24,
+                    height: 24,
+                    child: CircularProgressIndicator(),
+                  ),
+                );
+              }
+              return ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.black,
+                      foregroundColor: Colors.white,
+                      minimumSize: const Size(double.infinity, 40)),
+                  onPressed: () {
+                    model.add(SubmitLogin());
+                  },
+                  child: const Text("Login"));
+            },
+          )
         ],
       ),
     );

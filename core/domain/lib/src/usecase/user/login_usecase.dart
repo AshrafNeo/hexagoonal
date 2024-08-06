@@ -18,7 +18,7 @@ class LoginUseCase extends BaseUseCase<BaseError, LoginUseCaseParams, User> {
     return Future.value(
       (await _userRepository.loginWithEmail(
               email: params.emailOrPhone, password: params.password))
-          .fold((l) => Left(l), (result) async {
+          .fold((error) => Left(error), (result) async {
         return _userRepository.saveUser(result);
       }),
     );
