@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:domain/domain.dart';
 
 import '../out/database_port.dart';
@@ -11,14 +13,14 @@ class UserRepositoryImpl extends UserRepository {
 
   @override
   Future<Either<NetworkError, User>> loginWithEmail(
-      {required String email, required String password}) {
-    // TODO: implement loginWithEmail
-    throw UnimplementedError();
+      {required String email, required String password}) async {
+    log("message loginWithEmail");
+    return Right(User());
   }
 
   @override
-  Future<Either<DatabaseError, User>> saveUser(User user) {
-    // TODO: implement saveUser
-    throw UnimplementedError();
+  Future<Either<DatabaseError, User>> saveUser(User user) async {
+    log("message loginWithEmail");
+    return Right(User());
   }
 }

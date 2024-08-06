@@ -14,3 +14,6 @@ void main() {
   );
   startApp();
 }
+
+
+// flutter run --flavor prod -t lib/entrypoints/main_prod.dart

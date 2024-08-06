@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Flutter: Run prod",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "release",
+        "program": "app/lib/entrypoints/main_prod.dart",
+        "args": ["--flavor", "prod"]
+      },
+      {
+        "name": "Flutter: Run qa",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "release",
+        "program": "app/lib/entrypoints/main_qa.dart",
+        "args": ["--flavor", "qa"]
+      },
+      {
+        "name": "Flutter: Run dev",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "debug",
+        "program": "app/lib/entrypoints/main_dev.dart",
+        "args": ["--flavor", "dev"]
+      }
+    ]
+  }
+  

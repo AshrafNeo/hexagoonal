@@ -19,6 +19,14 @@ abstract class BaseStatefulPage<VM extends BasePageViewModel,
   Widget build(BuildContext context) {
     return getLayout();
   }
+
+  VM initModel();
+
+  @override
+  void initState() {
+    super.initState();
+    onBaseModelReady.call(initModel());
+  }
 }
 
 abstract class BasePageViewWidget<T extends BasePageViewModel> extends Widget {
